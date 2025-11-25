@@ -6,7 +6,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
 	plugins: [react(), tailwindcss()],
 	server: {
-		port: 3000, // Change from default 5173
+		port: 5173, // Change from default 5173
 		open: true, // Auto-open browser
+		host: true, // or "0.0.0.0"
+		strictPort: true,
+		watch: {
+			usePolling: true, // helpful on some host OSes
+		},
 	},
 });
